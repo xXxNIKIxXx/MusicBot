@@ -1,0 +1,9 @@
+version: "3" 
+services: 
+  jmusicbot:
+    build:
+      context: https://github.com/xXxNIKIxXx/MusicBot.git
+    volumes:
+      - PATH TO YOUR config.txt:/config.txt 
+      - PATH TO YOUR serversettings.json:/serversettings.json
+      - PATH TO YOUR Playlists/:/Playlists/
