@@ -4,6 +4,9 @@ RUN mkdir /Playlists
 
 RUN apt-get update && apt-get install -y wget
 
-RUN wget https://github.com/jagrosh/MusicBot/releases/download/0.3.9/JMusicBot-0.3.9.jar .
+RUN VER=$(curl --silent -qI https://github.com/jagrosh/MusicBot/releases/latest | awk -F '/' '/^location/ {print  substr($NF, 1, length($NF)-1)}');
+
+RUN wget https://github.com/jagrosh/MusicBot/releases/download/$VER/JMusicBot-$VER.jar .
+
 
 ENTRYPOINT ["java", "-Dnogui=true", "-Xmx256M", "-jar", "/JMusicBot-0.3.9.jar"]
