@@ -1,4 +1,5 @@
-FROM openjdk:16
+FROM adoptopenjdk:16-jre-hotspot
+
 WORKDIR /app
 RUN mkdir /Playlists
 
@@ -8,5 +9,4 @@ RUN VER=$(curl --silent -qI https://github.com/jagrosh/MusicBot/releases/latest 
 
 RUN wget https://github.com/jagrosh/MusicBot/releases/download/$VER/JMusicBot-$VER.jar .
 
-
-ENTRYPOINT ["java", "-Dnogui=true", "-Xmx256M", "-jar", "/JMusicBot-0.3.9.jar"]
+ENTRYPOINT ["java", "-Dnogui=true", "-Xmx256M", "-jar", "/JMusicBot-$VER.jar"]
