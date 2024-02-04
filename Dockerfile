@@ -3,8 +3,6 @@ FROM eclipse-temurin:18-jre-focal
 WORKDIR /app
 RUN mkdir /Playlists
 
-RUN apt-get update && apt-get install -y wget
-
 RUN wget https://github.com/jagrosh/MusicBot/releases/download/$(curl --silent -qI https://github.com/jagrosh/MusicBot/releases/latest | awk -F '/' '/^location/ {print  substr($NF, 1, length($NF)-1)}')/JMusicBot-$(curl --silent -qI https://github.com/jagrosh/MusicBot/releases/latest | awk -F '/' '/^location/ {print  substr($NF, 1, length($NF)-1)}').jar
 
 RUN mv JMusicBot-$(curl --silent -qI https://github.com/jagrosh/MusicBot/releases/latest | awk -F '/' '/^location/ {print  substr($NF, 1, length($NF)-1)}').jar JMusicBot.jar

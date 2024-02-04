@@ -4,6 +4,6 @@ services:
     build:
       context: https://github.com/xXxNIKIxXx/MusicBot.git
     volumes:
-      - PATH TO YOUR config.txt:/app/config.txt 
-      - PATH TO YOUR serversettings.json:/app/serversettings.json
-      - PATH TO YOUR Playlists/:/app/Playlists/
+      - ./config.txt:/app/config.txt 
+      - ./serversettings.json:/app/serversettings.json
+      - ./Playlists/:/app/Playlists/
