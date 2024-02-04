@@ -1,4 +1,4 @@
-FROM adoptopenjdk:16-jre-hotspot
+FROM eclipse-temurin:18-jre-focal
 
 WORKDIR /app
 RUN mkdir /Playlists
